@@ -14,9 +14,12 @@ shift = input("Enter the shift number: ")
 
 for i in range(n):
     letter = string_in[i]
-    location = alphabet.find(letter)
-    new_location = location + shift
-    string_out += alphabet[new_location % number_letters]   #Module to allow every shift number
+    if letter != " ":
+        location = alphabet.find(letter)
+        new_location = location + shift
+        string_out += alphabet[new_location % number_letters]   #Module to allow every shift number
 
+    else:
+        string_out += " "
 
 print("This is the message cipher: " + string_out)
